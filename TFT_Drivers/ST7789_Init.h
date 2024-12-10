@@ -124,7 +124,7 @@
 
 #ifdef TFT_BL
   // Turn on the back-light LED
-  digitalWrite(TFT_BL, HIGH);
+  analogWrite(TFT_BL, 128);
   pinMode(TFT_BL, OUTPUT);
 #endif
 }
@@ -146,9 +146,10 @@
  // writedata(0x00);
  // writedata(0xE0); // 5 to 6-bit conversion: r0 = r5, b0 = b5
 
-  writecommand(ST7789_COLMOD);
-  writedata(0x55);
-  delay(10);
+  // I dont know what this does, but it works
+  // writecommand(ST7789_COLMOD);
+  // writedata(0x55);
+  // delay(10);
 
   //--------------------------------ST7789V Frame rate setting----------------------------------//
   writecommand(ST7789_PORCTRL);
